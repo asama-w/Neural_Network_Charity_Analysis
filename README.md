@@ -28,10 +28,10 @@ To help Alphabet Soup, the non-profit foundation that funds organizations around
   + `INCOME_AMT`	
   + `SPECIAL_CONSIDERATIONS`
   + `ASK_AMT`
-+ Column `NAME` will be included only in the optimization of the model to see whether it has any influence on the accuracy.
 
 **3. Neither Target nor Feature Variables:** What variable(s) are neither targets nor features, and should be removed from the input data?
 + The variables that are neither target nor feature are `EIN` and `NAME` and is removed from the input data as it contains significant distinct values and might skew the model.
++ Column `NAME` will be included later in the optimization part of the model to see whether it has any influence on the performance accuracy.
 
 ### Compiling, Training, and Evaluating the Model
 **1. First Neural Network Model:**
@@ -39,11 +39,11 @@ To help Alphabet Soup, the non-profit foundation that funds organizations around
 The first version of the model (in `AlphabetSoupCharity.ipynb`) contains 2 hidden layers. As there are 43 input variables, 80 neurons is selected as the initial number for the 1st hidden layer, 30 neurons is selected for the 2nd hidden layer so that it is not too overfitting but still provides plenty number of weighted parameters. The activation functions include `ReLU` for hidden layers and `sigmoid` for the output layer.
 
 <img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_design_1.png width="80%" height="80%">
-<img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_1.png width="80%" height="80%">
+<img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_1.png width="60%" height="60%">
 
 **2. First Model Performance:** 
 
-The model accuracy is 72.5%, which is below the target performance of 75%.
+**The model accuracy is 72.5%**, which does not reach the target performance of 75%.
 <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_accuracy_1.png width="80%" height="80%">
 
 **3. Model Optimizations:** 
@@ -51,7 +51,7 @@ The model accuracy is 72.5%, which is below the target performance of 75%.
 <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/df_unique_values_1.png width="30%" height="30%">
 
 + **1st Optimization:** 
-  + Bucket `ASK_AMT` column, with those whose count is less than three are put as "Other".
+  + Bucket `ASK_AMT` column which has the unique value of 8747, those whose count is less than three are put as "Other".
   
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/ask_amt_bin.png width="40%" height="40%">
   + However, this optimization does not affect the performance, the accuracy is similarly at 72.6%
@@ -69,7 +69,7 @@ The model accuracy is 72.5%, which is below the target performance of 75%.
   
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_design_2.png width="80%" height="80%">
   
-  <img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_optimized_2.png width="80%" height="80%">
+  <img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_optimized_2.png width="60%" height="60%">
   
   + The accuracy increase to 78.1%, which surpasses the targeted performance.
 
