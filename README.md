@@ -14,10 +14,10 @@ To help Alphabet Soup, the non-profit foundation that funds organizations around
 + Original model (Deliverable 1 and 2): [AlphabetSoupCharity.ipynb](https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb)
 + Optimized model for higher accuracy (Deliverable 3): [AlphabetSoupCharity_Optimzation.ipynb](https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity_Optimzation.ipynb)
 ### Data Processing
-**1. Target Variable:** What variable(s) are considered the target(s) for your model?
+**1. Target Variable:** 
 + The target variable for this analysis is `IS_SUCCESSFUL` column which indicates wheter the organization is sucessful (1) or not successful (0).
 
-**2. Features Variable:** What variable(s) are considered to be the features for your model?
+**2. Features Variable:** 
 + The features variables are every column except `IS_SUCCESSFUL`, `EIN`, `NAME`, as shown in the following list:
   + `APPLICATION_TYPE	`
   + `AFFILIATION`
@@ -29,7 +29,7 @@ To help Alphabet Soup, the non-profit foundation that funds organizations around
   + `SPECIAL_CONSIDERATIONS`
   + `ASK_AMT`
 
-**3. Neither Target nor Feature Variables:** What variable(s) are neither targets nor features, and should be removed from the input data?
+**3. Neither Target nor Feature Variables:** 
 + The variables that are neither target nor feature are `EIN` and `NAME` and is removed from the input data as it contains significant distinct values and might skew the model.
 + Column `NAME` will be included later in the optimization part of the model to see whether it has any influence on the performance accuracy.
 
