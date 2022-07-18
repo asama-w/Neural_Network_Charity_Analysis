@@ -51,7 +51,9 @@ The first version of the model (in `AlphabetSoupCharity.ipynb`) contains 2 hidde
 <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/df_unique_values_1.png width="30%" height="30%">
 
 + **1st Optimization:** 
-  + Bucket `ASK_AMT` column which has the unique value of 8747, those whose count is less than three are put as "Other".
+  + Script: [Additional_AlphabetSoupCharity_Optimzation.ipynb](https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_AlphabetSoupCharity_Optimzation.ipynb)
+  + The only change in the model is the input data (binned `ASK_AMT`)
+  + Bucket `ASK_AMT` column which has the unique value of 8747, those whose count is less than 3 are put as "Other".
   
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/ask_amt_bin.png width="40%" height="40%">
   + However, this optimization does not affect the performance, the accuracy is similarly at 72.6%
@@ -59,7 +61,8 @@ The first version of the model (in `AlphabetSoupCharity.ipynb`) contains 2 hidde
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/ask_amt_accuracy.png width="80%" height="80%">
   
 + **2nd Optimization:** 
-  + Include the `NAME` column back to the dataset to see its effect and bucket them with those whose count is less than 10 will be binned as "Other".
+  + Script (Deliverable 3): [AlphabetSoupCharity_Optimzation.ipynb](https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity_Optimzation.ipynb)
+  + Include the `NAME` column as one of the feature variables to see its effect and bucket them by its count, those with less than 10 counts will be binned as "Other".
   
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/name_bin.png width="40%" height="40%">
   
@@ -71,11 +74,11 @@ The first version of the model (in `AlphabetSoupCharity.ipynb`) contains 2 hidde
   
   <img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_optimized_2.png width="60%" height="60%">
   
-  + The accuracy increase to 78.1%, which surpasses the targeted performance.
+  + **The accuracy increase to 78.1%**, which surpasses the targeted performance.
 
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_accuracy_2.png width="80%" height="80%">
   
 ## Summary
-From the optimizations in this analysis, the performance of the model is able to increase pass 75% if only the `NAME` columns is included in the feature variables. This implies that the name of the organization might have some influences on the successful of the organization, whether reason lies in its reputation, or the frequncy of applications. However, since the increase in performance of the optimized model with included NAME column is approximately 5.6%, slightly higher than the initial model when the NAME column is not considered, and the variability in names is considerably large, including the name as one of the features may not be a good solution for this analysis model as it might effect how the model weights the parameters and overlook other factors.
+From the optimizations in this analysis, the performance of the model is able to increase pass 75% if only the `NAME` columns is included in the feature variables. This implies that the name of the organization might have some influences on the success of the organization, whether the reason lies in its reputation, or the frequncy of applications. However, since the increase in performance of the optimized model with included NAME column is approximately 5.6%, slightly higher than the initial model when the NAME column is not considered, and the variability in names is considerably large, including the name as one of the features may not be a good solution for this analysis model as it might effect how the model weights the parameters and overlook other factors.
 
-Another machine learning model which could be used to predict the success of the organization is the **Random Forest Classifier**, as it uses decision trees and combine their output to make a final classification decision, in other words, the model structure is quite similar to the deep learning model. Also, this dataset does not contain images or required any heavy modifications, using random forest classifier model for this analysis can be a simpler and faster-processing way of predicting the success of the Alphabet Soup's funded organizations.
+Another machine learning model which could be used to predict the success of the organization is the **Random Forest Classifier**, as it uses decision trees and combine their output to make a final classification decision, in other words, the model structure is quite similar to the deep learning model. Also, this dataset does not contain images or requires any heavy modifications, using random forest classifier model for this analysis can be a simpler and faster-processing way of predicting the success of the Alphabet Soup's funded organizations.
