@@ -1,4 +1,4 @@
-# Charity_Analysis: Neural Network and Deep Learning Models
+# Charity Analysis: Neural Network and Deep Learning Models
 ## Overview
 ### Purpose of the analysis
 To help Alphabet Soup, the non-profit foundation that funds organizations around the world, determine whether their donated funds will be used effectively by analyzing the dataset of their funded applicants and predicting the success of the future applicants with the use of deep learning and neural networks models. The models are created using python's tensorflow library and will be optimized to yield better accuracy. 
@@ -51,11 +51,15 @@ The model accuracy is 72.5%, which is below the target performance of 75%.
 <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/df_unique_values_1.png width="30%" height="30%">
 
 + **1st Optimization:** 
-  + Bucket `ASK_AMT` column, with those whose count is less than three are put as "Other". However, the accuracy is similarly 72.6%
-  <img src=  width="40%" height="40%">
+  + Bucket `ASK_AMT` column, with those whose count is less than three are put as "Other".
+  
+  <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/ask_amt_bin.png width="40%" height="40%">
+  + However, this optimization does not affect the performance, the accuracy is similarly at 72.6%
+  
+  <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/ask_amt_accuracy.png width="80%" height="80%">
   
 + **2nd Optimization:** 
-  + Include the name column back to the dataset to see its effect and bucket them with those with the count less than 10 will be binned as "Other".
+  + Include the `NAME` column back to the dataset to see its effect and bucket them with those whose count is less than 10 will be binned as "Other".
   
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/name_bin.png width="40%" height="40%">
   
@@ -71,5 +75,7 @@ The model accuracy is 72.5%, which is below the target performance of 75%.
 
   <br /><img src= https://github.com/asama-w/Neural_Network_Charity_Analysis/blob/main/Additional_images/model_accuracy_2.png width="80%" height="80%">
   
-  ## Summary
-  
+## Summary
+From the optimizations in this analysis, the performance of the model is able to increase pass 75% if only the `NAME` columns is included in the feature variables. This implies that the name of the organization might have some influences on the successful of the organization, whether reason lies in its reputation, or the frequncy of applications. However, since the increase in performance of the optimized model with included NAME column is approximately 5.6%, slightly higher than the initial model when the NAME column is not considered, and the variability in names is considerably large, including the name as one of the features may not be a good solution for this analysis model as it might effect how the model weights the parameters and overlook other factors.
+
+Another machine learning model which could be used to predict the success of the organization is the **Random Forest Classifier**, as it uses decision trees and combine their output to make a final classification decision, in other words, the model structure is quite similar to the deep learning model. Also, this dataset does not contain images or required any heavy modifications, using random forest classifier model for this analysis can be a simpler and faster-processing way of predicting the success of the Alphabet Soup's funded organizations.
